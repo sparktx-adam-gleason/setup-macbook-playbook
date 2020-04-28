@@ -48,7 +48,7 @@
   git:
     force: yes
     accept_hostkey: yes
-    repo: "https://github.com/genomics-geek/dotfiles.git"
+    repo: "https://github.com/fullrobot/dotfiles.git"
     dest: "{{ lookup('env','HOME') }}/.dotfiles"
     version: "master"
   tags:
