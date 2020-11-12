@@ -18,34 +18,21 @@
 
 - name: install erlang, scala, go, nim, and python3
   homebrew:
-    name: [
-      "erlang",
-      "golang",
-      "scala",
-      "sbt",
-      "nim",
-      "python3",
-    ]
+    name: ["erlang", "golang", "scala", "sbt", "nim", "python3"]
     state: present
   tags:
     - languages
 
 - name: install perl packages
   homebrew:
-    name: [
-      "perl-build",
-      "plenv",
-    ]
+    name: ["perl-build", "plenv"]
     state: present
   tags:
     - languages
 
 - name: install Java packages
   homebrew:
-    name: [
-      "maven",
-      "jenv",
-    ]
+    name: ["maven", "jenv"]
     state: present
   tags:
     - languages

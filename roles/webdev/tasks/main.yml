@@ -1,38 +1,32 @@
 ---
 - name: install helpful packages
   homebrew:
-    name: [
-      "nginx",
-      "graphviz",
-    ]
+    name: ["nginx", "graphviz"]
     state: present
   tags:
     - webdev
 
 - name: install python packages
   homebrew:
-    name: [
-      "pipenv",
-      "pyenv",
-      "pyenv-virtualenv",
-      "pyenv-virtualenvwrapper",
-      "autopep8",
-      "flake8",
-    ]
+    name:
+      [
+        "pipenv",
+        "pyenv",
+        "pyenv-virtualenv",
+        "pyenv-virtualenvwrapper",
+        "autopep8",
+        "flake8",
+      ]
     state: present
   tags:
     - webdev
 
 - name: install Node and yarn
   homebrew:
-    name: [
-      "node@12",
-      "yarn",
-    ]
+    name: ["node@13", "yarn"]
     state: present
   tags:
     - webdev
-
 # NOTE: Currently not supported.  Yarn expects yarn add --global, but Ansible is trying
 # to use yarn global install
 # - name: Add JS global packages

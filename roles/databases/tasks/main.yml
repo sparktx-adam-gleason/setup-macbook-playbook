@@ -1,13 +1,7 @@
 ---
 - name: install databases
   homebrew:
-    name: [
-      "postgresql",
-      "mysql",
-      "redis",
-      "memcached",
-      "rabbitmq",
-    ]
+    name: ["postgresql", "mysql", "redis", "memcached", "rabbitmq"]
     state: present
   tags:
     - databases
