@@ -1,4 +1,12 @@
 ---
+- name: Create directory for installed apps
+  file:
+    path: "{{ lookup('env','HOME') }}/Applications"
+    state: directory
+    mode: 0775
+  tags:
+    - caskapps
+
 - name: install cask apps
   homebrew_cask:
     name: "{{ item }}"
@@ -7,49 +15,16 @@
   with_items:
     - "slack"
     - "skype"
-    - "atom"
-    - "vscodium"
+    - "visual-studio-code"
     - "postman"
     - "github"
     - "brave-browser"
     - "google-drive-file-stream"
     - "google-chrome"
     - "spotify"
-    - "spotify-notifications"
     - "dbvisualizer"
     - "lastpass"
-  tags:
-    - caskapps
-
-- name: install Atom packages
-  shell: "apm install {{ item }}"
-  with_items:
-    - "language-babel"
-    - "language-wdl"
-    - "atom-jinja2"
-    - "editorconfig"
-    - "linter"
-    - "linter-ui-default"
-    - "linter-eslint"
-    - "linter-flake8"
-    - "teletype"
-    - "git-plus"
-    - "highlight-selected"
-    - "file-icons"
-    - "ask-stack"
-    - "script"
-    - "autocomplete-python"
-    - "autocomplete-modules"
-    - "prettier-atom"
-    - "python-autopep8"
-    - "markdown-preview-plus"
-  tags:
-    - caskapps
-
-- name: Copy Atom configuration file
-  copy:
-    src: "{{ role_path }}/files/config.cson"
-    dest: "{{ lookup('env','HOME') }}/.atom/config.cson"
+    - "workplace-chat"
   tags:
     - caskapps
 
@@ -58,6 +33,7 @@
   with_items:
     - "ms-python.python"
     - "ms-vscode.go"
+    - "ms-vscode-remote.vscode-remote-extensionpack"
     - "broadinstitute.wdl"
     - "broadinstitute.wdl-devtools"
     - "msjsdiag.debugger-for-chrome"
@@ -73,8 +49,9 @@
     - "christian-kohler.npm-intellisense"
     - "christian-kohler.path-intellisense"
     - "eg2.vscode-npm-script"
-    - "pflannery.vscode-versionlens"
+    # - "pflannery.vscode-versionlens"
     - "streetsidesoftware.code-spell-checker"
     - "apollographql.vscode-apollo"
+    - "shan.code-settings-sync"
   tags:
     - caskapps
