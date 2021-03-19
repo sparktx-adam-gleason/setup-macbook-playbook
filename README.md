@@ -4,8 +4,8 @@ This will setup a new laptop for software development.
 
 ## Requirements:
 
-1. XCode is installed.  Can do so by running `xcode-select --install`
-2. Ansible is installed.  Can do so by running `pip install ansible`
+1. XCode is installed. Can do so by running `xcode-select --install`
+2. Ansible is installed. Can do so by running `pip install ansible`
 
 ### How to use:
 
@@ -22,64 +22,64 @@ This will setup a new laptop for software development.
 ```
  $ git clone https://github.com/fullrobot/setup-macbook-playbook.git
  $ cd setup-macbook-playbook
- $ ansible-playbook setup.yml -i hosts -l local -K
+ $ ansible-playbook setup.yml -i hosts -l local
 ```
 
 ### What this includes:
 
 #### Languages
 
-+ Python3
-+ R
-+ Java
-+ GO
-+ Scala
-+ Nim
+- Python3
+- R
+- Java
+- GO
+- Scala
+- Nim
 
 #### Databases
 
-+ Postgres
-+ MySQL
-+ Redis
+- Postgres
+- MySQL
+- Redis
 
 #### Virtual Environment managers
 
-+ pyenv
-+ pipenv
-+ jenv
-+ plenv
+- pyenv
+- pipenv
+- jenv
+- plenv
 
 #### Javascript tooling
 
-+ Node
-+ Yarn
-+ Create React App
+- Node
+- Yarn
+- Create React App
 
 #### Code formatters
 
-+ Autopep8
-+ Prettier
+- Autopep8
+- Prettier
 
 #### Productivity apps
 
-+ Atom
-+ VSCodium
-+ Slack
-+ Skype
-+ GitHub Desktop
-+ PostMan
-+ Google Drive
-+ Google Chrome
-+ Brave browser
-+ Spotify
-+ Lastpass
+- Atom
+- VSCodium
+- Slack
+- Skype
+- GitHub Desktop
+- PostMan
+- Google Drive
+- Google Chrome
+- Brave browser
+- Spotify
+- Lastpass
 
 #### Atom plugins
 
-+ teletype
-+ git-plus
-+ ask-stack
-+ linters for python and JS
-+ prettier
-+ python-autopep8
-+ language support for WDL, JSX, Python
+- teletype
+- git-plus
+- ask-stack
+- linters for python and JS
+- prettier
+- python-autopep8
+- language support for WDL, JSX, Python

@@ -76,3 +76,21 @@
     state: present
   tags:
     - terminal
+
+# See https://iterm2.com/documentation-dynamic-profiles.html
+- name: Create directory for iterm profiles
+  file:
+    path: ~/Library/Application Support/iTerm2/DynamicProfiles
+    state: directory
+    mode: 0775
+  tags:
+    - terminal
+
+- name: copy iTerm profile
+  copy:
+    force: false
+    src: "{{ role_path }}/files/Profiles.json"
+    dest: ~/Library/Application Support/iTerm2/DynamicProfiles
+    mode: 0755
+  tags:
+    - terminal

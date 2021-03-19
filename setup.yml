@@ -4,8 +4,8 @@
 
   roles:
     - initialize
+    - caskapps
     - terminal
     - languages
     - databases
     - webdev
-    - caskapps
