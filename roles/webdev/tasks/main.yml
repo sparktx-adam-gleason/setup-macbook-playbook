@@ -6,24 +6,9 @@
   tags:
     - webdev
 
-- name: install python packages
-  homebrew:
-    name:
-      [
-        "pipenv",
-        "pyenv",
-        "pyenv-virtualenv",
-        "pyenv-virtualenvwrapper",
-        "autopep8",
-        "flake8",
-      ]
-    state: present
-  tags:
-    - webdev
-
 - name: install Node and yarn
   homebrew:
-    name: ["node@13", "yarn"]
+    name: ["node", "yarn"]
     state: present
   tags:
     - webdev

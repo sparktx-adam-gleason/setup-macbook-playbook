@@ -16,9 +16,9 @@
   with_items:
     - "adoptopenjdk"
 
-- name: install erlang, scala, go, nim, and python3
+- name: install erlang, scala, go, nim, R and python3
   homebrew:
-    name: ["erlang", "golang", "scala", "sbt", "nim", "python3"]
+    name: ["erlang", "golang", "scala", "sbt", "nim", "python3", "r"]
     state: present
   tags:
     - languages
@@ -33,6 +33,21 @@
 - name: install Java packages
   homebrew:
     name: ["maven", "jenv"]
+    state: present
+  tags:
+    - languages
+
+- name: install python packages
+  homebrew:
+    name:
+      [
+        "pipenv",
+        "pyenv",
+        "pyenv-virtualenv",
+        "pyenv-virtualenvwrapper",
+        "autopep8",
+        "flake8",
+      ]
     state: present
   tags:
     - languages
