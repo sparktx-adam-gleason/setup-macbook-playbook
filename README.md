@@ -5,7 +5,7 @@ This will setup a new laptop for software development.
 ## Requirements:
 
 1. XCode is installed.  Can do so by running `xcode-select --install`
-2. Ansible is installed.  Can do so by running `pip install ansible==2.8.4`
+2. Ansible is installed.  Can do so by running `pip install ansible`
 
 ### How to use:
 
@@ -14,15 +14,15 @@ This will setup a new laptop for software development.
 ```
  $ xcode-select --install
  $ sudo easy_install pip
- $ sudo pip install ansible==2.8.4
+ $ sudo pip install ansible
 ```
 
 ##### 2. Run the ansible playbook:
 
 ```
- $ git clone https://github.com/genomics-geek/setup-macbook-playbook.git
+ $ git clone https://github.com/fullrobot/setup-macbook-playbook.git
  $ cd setup-macbook-playbook
- $ ansible-playbook setup.yml -i hosts -l local
+ $ ansible-playbook setup.yml -i hosts -l local -K
 ```
 
 ### What this includes:
@@ -30,6 +30,7 @@ This will setup a new laptop for software development.
 #### Languages
 
 + Python3
++ R
 + Java
 + GO
 + Scala
