@@ -7,6 +7,7 @@
         "zsh-completions",
         "zsh-autosuggestions",
         "zsh-syntax-highlighting",
+        "zsh-history-substring-search",
       ]
     state: present
   tags:
@@ -22,6 +23,50 @@
 - name: install Oh My Zsh
   shell: sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
   when: not z.stat.exists
+  tags:
+    - terminal
+
+- name: pull down zsh themes
+  git:
+    force: yes
+    accept_hostkey: yes
+    repo: "https://github.com/bhilburn/powerlevel9k.git"
+    dest: "{{ lookup('env','HOME') }}/.oh-my-zsh/custom/themes/powerlevel9k"
+    version: "master"
+  tags:
+    - terminal
+
+- name: pull down fonts
+  git:
+    force: yes
+    accept_hostkey: yes
+    repo: "https://github.com/powerline/fonts.git"
+    dest: "{{ lookup('env','HOME') }}/.fonts"
+    version: "master"
+  tags:
+    - terminal
+
+- name: install fonts
+  shell:
+    cmd: sh ./install.sh
+    chdir: "{{ lookup('env','HOME') }}/.fonts"
+  tags:
+    - terminal
+
+- name: pull down color schemes
+  git:
+    force: yes
+    accept_hostkey: yes
+    repo: "https://github.com/mbadolato/iTerm2-Color-Schemes.git"
+    dest: "{{ lookup('env','HOME') }}/.color-schemes"
+    version: "master"
+  tags:
+    - terminal
+
+- name: install color schemes
+  shell:
+    cmd: sh ./import-scheme.sh schemes/*
+    chdir: "{{ lookup('env','HOME') }}/.color-schemes/tools"
   tags:
     - terminal
 
