@@ -6,6 +6,7 @@ This will setup a new laptop for software development.
 
 1. XCode is installed. Can do so by running `xcode-select --install`
 2. Ansible is installed. Can do so by running `pip install ansible`
+3. Must be signed into App Store
 
 ### How to use:
 
@@ -61,25 +62,16 @@ This will setup a new laptop for software development.
 - Prettier
 
 #### Productivity apps
-
-- Atom
-- VSCodium
+- Mac App Store command line
+- VSCode
 - Slack
-- Skype
 - GitHub Desktop
 - PostMan
 - Google Drive
-- Google Chrome
 - Brave browser
 - Spotify
-- Lastpass
+- BitWarden
+- iTerm2
+- Spectacle
+- Alfred
 
-#### Atom plugins
-
-- teletype
-- git-plus
-- ask-stack
-- linters for python and JS
-- prettier
-- python-autopep8
-- language support for WDL, JSX, Python
