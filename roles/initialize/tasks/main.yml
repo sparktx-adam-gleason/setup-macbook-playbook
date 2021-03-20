@@ -27,6 +27,7 @@
   homebrew:
     name:
       [
+        "mas",
         "wget",
         "gcc",
         "openssl",
