@@ -4,10 +4,10 @@
     name:
       [
         "zsh",
-        # "zsh-completions",
-        # "zsh-autosuggestions",
-        # "zsh-syntax-highlighting",
-        # "zsh-history-substring-search",
+        "zsh-completions",
+        "zsh-autosuggestions",
+        "zsh-syntax-highlighting",
+        "zsh-history-substring-search",
       ]
     state: present
   tags:

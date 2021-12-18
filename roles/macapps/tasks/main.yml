@@ -1,8 +1,0 @@
----
-- name: Install MAC Apps
-  community.general.mas:
-    id:
-      - 937984704 # Amphetamine
-    state: present
-  tags:
-    - macapps

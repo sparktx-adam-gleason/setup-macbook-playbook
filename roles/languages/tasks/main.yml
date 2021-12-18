@@ -1,41 +1,41 @@
 ---
-- name: install openjdk
-  homebrew_tap:
-    name: "{{ item }}"
-    state: present
-  with_items:
-    - "adoptopenjdk/openjdk"
-  tags:
-    - languages
+# - name: install openjdk
+#   homebrew_tap:
+#     name: "{{ item }}"
+#     state: present
+#   with_items:
+#     - "adoptopenjdk/openjdk"
+#   tags:
+#     - languages
 
-- name: install cask adoptopenjdk
-  homebrew_cask:
-    name: "{{ item }}"
-    state: present
-    install_options: "appdir=$HOME/Applications/"
-  with_items:
-    - "adoptopenjdk"
+# - name: install cask adoptopenjdk
+#   homebrew_cask:
+#     name: "{{ item }}"
+#     state: present
+#     install_options: "appdir=$HOME/Applications/"
+#   with_items:
+#     - "adoptopenjdk"
 
-- name: install erlang, scala, go, nim, R and python3
+- name: install R, Rust and python3
   homebrew:
-    name: ["erlang", "golang", "scala", "sbt", "nim", "python3", "r"]
+    name: ["python3", "r", "rust"]
     state: present
   tags:
     - languages
 
-- name: install perl packages
-  homebrew:
-    name: ["perl-build", "plenv"]
-    state: present
-  tags:
-    - languages
+# - name: install perl packages
+#   homebrew:
+#     name: ["perl-build", "plenv"]
+#     state: present
+#   tags:
+#     - languages
 
-- name: install Java packages
-  homebrew:
-    name: ["maven", "jenv"]
-    state: present
-  tags:
-    - languages
+# - name: install Java packages
+#   homebrew:
+#     name: ["maven", "jenv"]
+#     state: present
+#   tags:
+#     - languages
 
 - name: install python packages
   homebrew:

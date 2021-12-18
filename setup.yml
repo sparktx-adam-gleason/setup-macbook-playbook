@@ -5,8 +5,6 @@
   roles:
     - initialize
     - caskapps
-    - macapps
     - terminal
     - languages
-    - databases
-    - webdev
+    - devtools

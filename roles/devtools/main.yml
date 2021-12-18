@@ -1,0 +1,10 @@
+---
+- name: install dev tools
+  homebrew:
+    name: [
+      "docker",
+      "terraform"
+    ]
+    state: present
+  tags:
+    - devtools
