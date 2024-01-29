@@ -13,13 +13,8 @@ ansible = "^9.1.0"
 ansible-core = "^2.16.2"
 
 [tool.poetry.group.dev.dependencies]
-ruff = "^0.1.14"
-pre-commit = "^3.6.0"
-mypy = "^1.8.0"
-pylint = "^3.0.3"
 bumpver = "^2023.1129"
 poetry-plugin-up = "^0.7.1"
-pytest = "^7.4.4"
 
 [build-system]
 requires = ["poetry-core"]
