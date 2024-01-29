@@ -13,8 +13,6 @@
   tags:
     - terminal
 
-
-
 - name: Check if Oh My Zsh is already installed
   stat:
     path: "{{ lookup('env','HOME') }}/.oh-my-zsh"
@@ -23,42 +21,42 @@
     - terminal
 
 - name: install Oh My Zsh
-  shell: sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
   when: not z.stat.exists
   tags:
     - terminal
 
 - name: install zsh-pyenv plugin
   git:
-    repo: 'https://github.com/mattberther/zsh-pyenv'
+    repo: "https://github.com/mattberther/zsh-pyenv"
     dest: "{{ lookup('env','HOME') }}/.oh-my-zsh/custom}/plugins/zsh-pyenv"
   tags:
     - terminal
 
 - name: install zsh-history-substring-search plugin
   git:
-    repo: 'https://github.com/zsh-users/zsh-history-substring-search'
+    repo: "https://github.com/zsh-users/zsh-history-substring-search"
     dest: "{{ lookup('env','HOME') }}/.oh-my-zsh/custom}/plugins/zsh-history-substring-search"
   tags:
     - terminal
 
 - name: install zsh-syntax-highlighting plugin
   git:
-    repo: 'https://github.com/zsh-users/zsh-syntax-highlighting'
+    repo: "https://github.com/zsh-users/zsh-syntax-highlighting"
     dest: "{{ lookup('env','HOME') }}/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting"
   tags:
     - terminal
 
 - name: install zsh-completions plugin
   git:
-    repo: 'https://github.com/zsh-users/zsh-completions'
+    repo: "https://github.com/zsh-users/zsh-completions"
     dest: "{{ lookup('env','HOME') }}/.oh-my-zsh/custom}/plugins/zsh-completions"
   tags:
     - terminal
 
 - name: install zsh-autosuggestions plugin
   git:
-    repo: 'https://github.com/zsh-users/zsh-autosuggestions'
+    repo: "https://github.com/zsh-users/zsh-autosuggestions"
     dest: "{{ lookup('env','HOME') }}/.oh-my-zsh/custom}/plugins/zsh-autosuggestions"
   tags:
     - terminal

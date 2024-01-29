@@ -24,10 +24,9 @@
     - "iterm2"
     - "bitwarden"
     - "docker"
-    - "steam"
+    # - "steam"
   tags:
     - caskapps
-
 # - name: install VSCode packages
 #   shell: "code --install-extension {{ item }}"
 #   with_items:

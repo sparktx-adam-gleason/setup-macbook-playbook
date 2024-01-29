@@ -1,0 +1,121 @@
+[tool.poetry]
+name = "setup-macbook-playbook"
+version = "0.1.0"
+description = "Ansible playbook for automated Macbook setup"
+authors = [
+  "Adam Gleason <87654402+sparktx-adam-gleason@users.noreply.github.com>",
+]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+ansible = "^9.1.0"
+ansible-core = "^2.16.2"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.1.14"
+pre-commit = "^3.6.0"
+mypy = "^1.8.0"
+pylint = "^3.0.3"
+bumpver = "^2023.1129"
+poetry-plugin-up = "^0.7.1"
+pytest = "^7.4.4"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.mypy]
+python_version = "3.10"
+check_untyped_defs = true
+ignore_errors = false
+ignore_missing_imports = true
+strict_optional = true
+warn_unused_ignores = true
+warn_redundant_casts = true
+warn_unused_configs = true
+allow_redefinition = true
+
+[tool.pylint.format]
+max-line-length = 120
+
+[tool.pylint.MASTER]
+fail-under = '10.0'
+ignore = '.git, __init__.py'
+
+[tool.pylint."MESSAGES CONTROL"]
+disable = '''import-error,
+    missing-module-docstring,
+    missing-function-docstring'''
+
+[tool.ruff]
+target-version = "py310"
+src = ["src", "tests"]
+select = [
+  "E", # pycodestyle
+  "W", # pycodestyle
+  "F", # Pyflakes
+  "I", # isort
+  # "N",  pep8-naming
+  # "D", # pydocstyle
+  "UP",  # pyupgrade
+  "YTT", # flake8-2020
+  "ANN", # flake8-annotations
+  "S",   # flake8-bandit
+  # "BLE", # flake8-blind-except
+  # "FBT", # flake8-boolean-trap
+  "B",   # flake8-bugbear
+  "A",   # flake8-builtins
+  "COM", # flake8-commas
+  "C4",  # flake8-comprehensions
+  "DTZ", # flake8-datetimez
+  "T10", # flake8-debugger
+  # "EM", # flake8-errmsg
+  "ISC", # flake8-implicit-str-concat
+  # "T20", # flake8-print
+  "PT",  # flake8-pytest-style
+  "ICN", # flake8-import-conventions
+  "INP", # flake8-no-pep420
+  "PIE", # flake8-pie
+  "RSE", # flake8-raise
+  # "RET", # flake8-return
+  "SLF", # flake8-self
+  "SIM", # flake8-simplify
+  # "TID", # flake8-tidy-imports
+  "TCH", # flake8-type-checking -- not sure if it works
+  # "ARG", # flake8-unused-arguments
+  # "PTH", # flake8-use-pathlib
+  # "ERA", # eradicate
+  "PGH", # pygrep-hooks
+  "PL",  # Pylint
+  # "RUF", # Ruff-specific rules
+]
+ignore = [
+  "E501",    # Line too long
+  "S101",    # Use of `assert` detected
+  "S108",    # Probable insecure usage of temporary file or directory: "/tmp/"
+  "S113",    # Probable use of requests call without timeout
+  "PLR0913", # Too many arguments to function call
+  "ANN002",  # Missing type annotation for `*args`
+  "ANN003",  # Missing type annotation for `**kwargs`
+  "ANN101",  # Missing type annotation for `self` in method
+  "ANN102",  # Missing type annotation for `cls` in classmethod
+  "PGH003",  # Use specific rule codes when ignoring type issues
+]
+line-length = 120
+
+[tool.ruff.isort]
+known-local-folder = ["src", "tests"]
+combine-as-imports = true
+
+[tool.bumpver]
+current_version = "0.1.0"
+version_pattern = "MAJOR.MINOR.PATCH"
+commit_message = "Bump version {old_version} -> {new_version}"
+commit = true
+tag = true
+push = false
+
+[tool.bumpver.file_patterns]
+"pyproject.toml" = ['current_version = "{version}"', 'version = "{version}"']

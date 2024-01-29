@@ -39,15 +39,7 @@
 
 - name: install python packages
   homebrew:
-    name:
-      [
-        "pipenv",
-        "pyenv",
-        "pyenv-virtualenv",
-        "pyenv-virtualenvwrapper",
-        "autopep8",
-        "flake8",
-      ]
+    name: ["pyenv", "pyenv-virtualenv", "pyenv-virtualenvwrapper"]
     state: present
   tags:
     - languages

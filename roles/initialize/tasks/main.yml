@@ -41,7 +41,6 @@
         "screen",
         "pigz",
         "tree",
-        "heroku",
       ]
     state: present
   tags:
@@ -58,7 +57,7 @@
   git:
     force: yes
     accept_hostkey: yes
-    repo: "https://github.com/fullrobot/dotfiles.git"
+    repo: "https://github.com/sparktx-adam-gleason/dotfiles.git"
     dest: "{{ lookup('env','HOME') }}/.dotfiles"
     version: "master"
   tags:
