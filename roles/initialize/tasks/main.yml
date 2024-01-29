@@ -1,7 +1,7 @@
 ---
 - name: Check if Homebrew is already installed
   stat:
-    path: /opt/homebrew/bin/brew
+    path: /usr/local/bin/brew
   register: b
   tags:
     - initialize
@@ -9,6 +9,7 @@
 - name: Install Homebrew
   script: install-homebrew.sh
   when: not b.stat.exists
+  become: true
   tags:
     - initialize
 
@@ -18,8 +19,6 @@
     state: present
   with_items:
     - "homebrew/services"
-    - "homebrew/cask"
-    - "heroku/brew"
   tags:
     - initialize
 
